@@ -16,6 +16,8 @@
         <junit.version>3.8.1</junit.version>
         <android.version>1.5_r4</android.version>
         <acra.version>4.5.0</acra.version>
+
+        <altDeploymentRepository>snapshot-repo::default::file:repository/snapshots</altDeploymentRepository>
     </properties>
 
     <dependencies>
@@ -83,4 +85,14 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <repository>
+            <id>repo</id>
+            <url>https://raw.github.com/wolfhechel/acra-sentry-sender/maven/release</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshot-repo</id>
+            <url>https://raw.github.com/wolfhechel/acra-sentry-sender/maven//snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
