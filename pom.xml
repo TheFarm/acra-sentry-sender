@@ -8,6 +8,21 @@
     <name>acra-sentry-sender</name>
     <url>http://maven.apache.org</url>
 
+    <profiles>
+        <profile>
+            <id>release</id>
+            <properties>
+                <altDeploymentRepository>repo::default::file:repository/releases</altDeploymentRepository>
+            </properties>
+        </profile>
+        <profile>
+            <id>snapshot</id>
+            <properties>
+                <altDeploymentRepository>snapshot-repo::default::file:repository/snapshots</altDeploymentRepository>
+            </properties>
+        </profile>
+    </profiles>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -16,8 +31,6 @@
         <junit.version>3.8.1</junit.version>
         <android.version>1.5_r4</android.version>
         <acra.version>4.5.0</acra.version>
-
-        <altDeploymentRepository>snapshot-repo::default::file:repository/snapshots</altDeploymentRepository>
     </properties>
 
     <dependencies>
